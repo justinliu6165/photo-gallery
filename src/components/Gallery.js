@@ -1,9 +1,11 @@
 import React from 'react';
 import './Gallery.scss';
+import {Link} from 'react-router-dom';
+
 
 function mouseover(e){
     const imgs = document.querySelectorAll('.gallery__item');
-    const target = e.target.parentNode;
+    const target = e.target.parentNode.parentNode;
 
     for(let i = 0; i < imgs.length; i++){
         if(imgs[i] === target) {
@@ -28,8 +30,10 @@ const Gallery = (props) => {
             {
                 props.images.map(image => (
                     <li className='gallery__item' onMouseEnter={mouseover} onMouseLeave={mouseleave} key={image.slug}>
-                        <img src={image.url} alt=""/>
-                        <div className="gallery__item-overlay"></div>
+                        <Link to={`/photo/${image.slug}`}>
+                            <img src={image.url} alt=""/>
+                            <div className="gallery__item-overlay"></div>
+                        </Link>
                     </li>
                 ))
             }
