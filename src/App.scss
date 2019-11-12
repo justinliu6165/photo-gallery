@@ -1,0 +1,56 @@
+$space-font: "Space Mono", monospace;
+
+.app {
+  margin-bottom: 3rem;
+
+  &__content {
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  &__end-note {
+    text-align: center; 
+  }
+}
+
+.hero {
+  height: 75vh;
+  width: 100%;
+  position: relative;
+
+  &__img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &__text {
+    position: absolute;
+    margin: 0;
+    font-size: 18px;
+    font-family: $space-font;
+    font-weight: 700;
+    max-width: 300px;
+    color: white;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0,0,0,0.3);
+    padding: 1rem;
+    
+    span {
+      display: block;
+    }
+  }
+
+  @media only screen and (min-width: 768px){
+    &__text {
+      color: black;
+      left: 20%; 
+      top: 70%;
+      background-color: rgba(0,0,0,0);
+    }
+  }
+}
